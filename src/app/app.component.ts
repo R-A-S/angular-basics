@@ -15,4 +15,13 @@ export class AppComponent {
   obj = {
     a: 2,
   };
+
+  img = 'https://image.flaticon.com/icons/svg/148/148766.svg';
+
+  constructor() {
+    setTimeout(() => {
+      console.log('Timeout is over');
+      this.img = 'https://image.flaticon.com/icons/svg/148/148767.svg';
+    }, 5000);
+  }
 }
