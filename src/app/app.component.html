@@ -3,11 +3,9 @@
 <button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
 <hr />
 <div
-  [ngStyle]="{
-    width: '200px',
-    height: '200px',
-    border: '2px solid #ccc',
-    borderRadius: '5px',
-    backgroundColor: backgroundToggle ? 'black' : '#c2c2c2'
+  [ngClass]="{
+    blue: backgroundToggle,
+    yellow: !backgroundToggle
   }"
 ></div>
+<div [class.blue]="!backgroundToggle" [class.yellow]="backgroundToggle"></div>
