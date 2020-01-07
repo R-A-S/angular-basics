@@ -1,6 +1,6 @@
 <h1>Hello Angular World</h1>
 <hr />
-<!--{{ title }}-->
+<!-- {{ title }}-->
 <!--<p>-->
 <!--  <strong>{{ number - 2 }}</strong>-->
 <!--</p>-->
@@ -10,7 +10,19 @@
 <!--<p>-->
 <!--  <strong>{{ obj.a * 2 }}</strong>-->
 <!--</p>-->
-<img [src]="img" alt="" />
+
+<label for="text">Tap here</label
+><input
+  type="text"
+  name="text"
+  id="text"
+  (keydown)="onInput($event)"
+  (blur)="onBlur(input)"
+  #input
+/>
 <hr />
-<app-post></app-post>
+<p>
+  <strong>{{ inputValue }}</strong>
+</p>
+<!--<app-post></app-post>-->
 <hr />
