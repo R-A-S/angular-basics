@@ -1,8 +1,10 @@
 <h1>Hello Angular World</h1>
 <hr />
 <button (click)="toggle = !toggle">Toggle</button>
+<button (click)="toggle = 'def'">Default</button>
 <hr />
-<div class="blue" *ngIf="toggle; else yellowP"></div>
-<ng-template #yellowP>
-  <div class="yellow"></div>
-</ng-template>
+<div [ngSwitch]="toggle">
+  <div *ngSwitchCase="true" class="blue"></div>
+  <div *ngSwitchCase="false" class="yellow"></div>
+  <div *ngSwitchDefault class="grey"></div>
+</div>
