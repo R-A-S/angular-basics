@@ -1,11 +1,8 @@
 <h1>Hello Angular World</h1>
 <hr />
-<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<button (click)="toggle = !toggle">Toggle</button>
 <hr />
-<div
-  [ngClass]="{
-    blue: backgroundToggle,
-    yellow: !backgroundToggle
-  }"
-></div>
-<div [class.blue]="!backgroundToggle" [class.yellow]="backgroundToggle"></div>
+<div class="blue" *ngIf="toggle; else yellowP"></div>
+<ng-template #yellowP>
+  <div class="yellow"></div>
+</ng-template>
