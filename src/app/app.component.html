@@ -1,10 +1,21 @@
 <h1>Hello Angular World</h1>
 <hr />
-<button (click)="toggle = !toggle">Toggle</button>
-<button (click)="toggle = 'def'">Default</button>
+
+<ul style="list-style: none">
+  <li *ngFor="let post of posts; let i = index">
+    <p>
+      <b>{{ i + 1 }}</b
+      >&nbsp; <span>{{ post.title }}</span> >&nbsp;>&nbsp;
+      <span>{{ post.author }}</span>
+    </p>
+    <hr />
+    <ul>
+      <li *ngFor="let comment of post.comments">
+        <small>{{ comment.title }}</small>
+        <p>{{ comment.text }}</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <hr />
-<div [ngSwitch]="toggle">
-  <div *ngSwitchCase="true" class="blue"></div>
-  <div *ngSwitchCase="false" class="yellow"></div>
-  <div *ngSwitchDefault class="grey"></div>
-</div>
