@@ -1,5 +1,13 @@
 <h1>Hello Angular World</h1>
 <hr />
-<label for="text">Type here → </label
-><input type="text" name="text" id="text" [(ngModel)]="title" />
-<p>{{ title }}</p>
+<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<hr />
+<div
+  [ngStyle]="{
+    width: '200px',
+    height: '200px',
+    border: '2px solid #ccc',
+    borderRadius: '5px',
+    backgroundColor: backgroundToggle ? 'black' : '#c2c2c2'
+  }"
+></div>
