@@ -1,28 +1,5 @@
 <h1>Hello Angular World</h1>
 <hr />
-<!-- {{ title }}-->
-<!--<p>-->
-<!--  <strong>{{ number - 2 }}</strong>-->
-<!--</p>-->
-<!--<p>-->
-<!--  <strong>{{ arr }}</strong>-->
-<!--</p>-->
-<!--<p>-->
-<!--  <strong>{{ obj.a * 2 }}</strong>-->
-<!--</p>-->
-
-<label for="text">Tap here</label
-><input
-  type="text"
-  name="text"
-  id="text"
-  (keydown)="onInput($event)"
-  (blur)="onBlur(input)"
-  #input
-/>
-<hr />
-<p>
-  <strong>{{ inputValue }}</strong>
-</p>
-<!--<app-post></app-post>-->
-<hr />
+<label for="text">Type here → </label
+><input type="text" name="text" id="text" [(ngModel)]="title" />
+<p>{{ title }}</p>
