@@ -13,7 +13,15 @@ export interface Post {
 })
 export class AppComponent {
   posts: Array<Post> = [
-    { title: 'I need to learn Angular Components', text: 'And still learning...😁', id: 1 },
+    {
+      title: 'I need to learn Angular Components',
+      text: 'And still learning...😁',
+      id: 1,
+    },
     { title: 'Next block about', text: 'directives and something else', id: 2 },
   ];
+
+  updatePosts(post: Post): void {
+    this.posts.unshift(post);
+  }
 }
