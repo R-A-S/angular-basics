@@ -5,7 +5,7 @@
 
   <hr />
 
-  <app-post *ngFor="let p of posts" [post]="p">
+  <app-post *ngFor="let p of posts" [post]="p" (onRemove)="removePost($event)">
     <div #info>
       <small *ngIf="p.text.trim().length < 10; else long">Short post</small>
       <ng-template #long>
