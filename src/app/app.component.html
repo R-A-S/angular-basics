@@ -1,21 +1,10 @@
-<h1>Hello Angular World</h1>
-<hr />
+<div class="container">
+  <h1>Angular Components</h1>
 
-<ul style="list-style: none">
-  <li *ngFor="let post of posts; let i = index">
-    <p>
-      <b>{{ i + 1 }}</b
-      >&nbsp; <span>{{ post.title }}</span> >&nbsp;>&nbsp;
-      <span>{{ post.author }}</span>
-    </p>
-    <hr />
-    <ul>
-      <li *ngFor="let comment of post.comments">
-        <small>{{ comment.title }}</small>
-        <p>{{ comment.text }}</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+  <app-post-form></app-post-form>
 
-<hr />
+  <hr />
+
+  <app-post></app-post>
+  <app-post></app-post>
+</div>
