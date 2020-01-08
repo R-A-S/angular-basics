@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-  <p>{{ date | date: 'MMMM dd, yyyy, HH:mm:ss' }}</p>
-  <p>{{ float }}</p>
-  <p>{{ float | percent: '2.0-0' }}</p>
-  <p>{{ float | currency }}</p>
 
-  <pre>{{ obj | json }}</pre>
+  <p>{{ 2 | mult }}</p>
+  <p>{{ 2 | mult: 3 }}</p>
+  <p>{{ 2 | mult: 5 }}</p>
+
+  <p>{{ 'Hello World' | exMarks }}</p>
 </div>

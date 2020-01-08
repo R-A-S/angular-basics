@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { ExMarksPipe } from './pipes/ex-marks.pipe';
+import { MultByPipe } from './pipes/mult-by.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ExMarksPipe, MultByPipe],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
