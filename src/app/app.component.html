@@ -1,6 +1,9 @@
 <div class="container">
   <h1>Angular Pipes</h1>
-  <p>{{ str | uppercase | lowercase | titlecase }}</p>
+  <p>{{ date | date: 'MMMM dd, yyyy, HH:mm:ss' }}</p>
+  <p>{{ float }}</p>
+  <p>{{ float | percent: '2.0-0' }}</p>
+  <p>{{ float | currency }}</p>
 
-  <p>{{ str | titlecase | slice: 1:5 }}</p>
+  <pre>{{ obj | json }}</pre>
 </div>
