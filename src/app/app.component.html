@@ -1,38 +1,4 @@
 <div class="container">
-  <h1>Angular Directives</h1>
-  <p appStyle="red" [dStyles]="{ border: '2px solid blue', borderRadius: '5px' }">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, recusandae.
-  </p>
-  <p appStyle="blue" [dStyles]="{ border: '2px dotted grey', borderRadius: '5px' }">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, recusandae.
-  </p>
-
-  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
-  <div *ngIf="isVisible" class="wrap">
-    <p>
-      1
-    </p>
-  </div>
-
-  <ng-template [ngIf]="isVisible">
-    <div class="wrap">
-      <p>
-        2
-      </p>
-    </div>
-  </ng-template>
-
-  <div *appIfNot="!isVisible" class="wrap">
-    <p>
-      3
-    </p>
-  </div>
-
-  <ng-template [appIfNot]="!isVisible">
-    <div class="wrap">
-      <p>
-        4
-      </p>
-    </div>
-  </ng-template>
+  <h1>Angular Pipes</h1>
+  <p></p>
 </div>
