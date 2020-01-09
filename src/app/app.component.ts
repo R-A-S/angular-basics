@@ -15,17 +15,14 @@ interface Todo {
 export class AppComponent implements OnInit {
   todos: Array<Todo> = [];
 
-  todoTitle: '';
+  isFetching = false;
+
+  todoTitle = '';
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http
-      .get<Array<Todo>>('https://jsonplaceholder.typicode.com/todos?_limit=2')
-      .subscribe((response) => {
-        console.log('Response: ', response);
-        this.todos = response;
-      });
+    this.fetchTodos();
   }
 
   addTodo(): void {
@@ -44,6 +41,16 @@ export class AppComponent implements OnInit {
         console.log('Todo ', todo);
         this.todos.push(todo);
         this.todoTitle = '';
+      });
+  }
+
+  fetchTodos(): void {
+    this.isFetching = true;
+    this.http
+      .get<Array<Todo>>('https://jsonplaceholder.typicode.com/todos?_limit=2')
+      .subscribe((response) => {
+        this.todos = response;
+        this.isFetching = false;
       });
   }
 }
