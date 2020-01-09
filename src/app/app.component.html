@@ -71,7 +71,10 @@
         class="form-control"
       >
         <label>Умение {{ idx + 1 }}</label>
-        <input type="text" [formControlName]="idx" />
+        <label>
+          <!--suppress AngularInvalidExpressionResultType -->
+          <input type="text" [formControlName]="idx" />
+        </label>
       </div>
     </div>
 
