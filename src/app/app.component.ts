@@ -15,6 +15,8 @@ interface Todo {
 export class AppComponent implements OnInit {
   todos: Array<Todo> = [];
 
+  todoTitle: '';
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -23,6 +25,25 @@ export class AppComponent implements OnInit {
       .subscribe((response) => {
         console.log('Response: ', response);
         this.todos = response;
+      });
+  }
+
+  addTodo(): void {
+    if (!this.todoTitle.trim()) {
+      return;
+    }
+
+    const newTodo: Todo = {
+      title: this.todoTitle,
+      completed: false,
+    };
+
+    this.http
+      .post<Todo>('https://jsonplaceholder.typicode.com/todos', newTodo)
+      .subscribe((todo) => {
+        console.log('Todo ', todo);
+        this.todos.push(todo);
+        this.todoTitle = '';
       });
   }
 }
