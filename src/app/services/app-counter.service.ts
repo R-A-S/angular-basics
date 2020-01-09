@@ -1,11 +1,16 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AppCounterService {
   counter = 0;
 
-  increase() {
-    this.counter++;
+  increase(): void {
+    this.counter += 1;
   }
 
-  decrease() {
-    this.counter--;
+  decrease(): void {
+    this.counter -= 1;
   }
 }
