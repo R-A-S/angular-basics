@@ -10,23 +10,34 @@
   </div>
 
   <hr />
-  <div *ngIf="!isFetching; else loadingBlock">
-    <div *ngIf="todos.length; else noTodos">
-      <div class="card" *ngFor="let todo of todos">
-        <p>
-          <span [class.completed]="todo.completed">{{
-            todo.title | titlecase
-          }}</span>
-          <span>
-            <button class="btn btn-danger" (click)="removeTodo(todo.id)">
-              Удалить
-            </button>
-            <button class="btn" [disabled]="todo.completed" (click)="completeTodo(todo.id)">Завершить</button>
-          </span>
-        </p>
+
+  <p *ngIf="error; else todosBlock" class="error">{{ error }}</p>
+  <ng-template #todosBlock>
+    <div *ngIf="!isFetching; else loadingBlock">
+      <div *ngIf="todos.length; else noTodos">
+        <div class="card" *ngFor="let todo of todos">
+          <p>
+            <span [class.completed]="todo.completed">{{
+              todo.title | titlecase
+            }}</span>
+            <span>
+              <button class="btn btn-danger" (click)="removeTodo(todo.id)">
+                Удалить
+              </button>
+              <button
+                class="btn"
+                [disabled]="todo.completed"
+                (click)="completeTodo(todo.id)"
+              >
+                Завершить
+              </button>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <ng-template #loadingBlock><p>Loading...</p></ng-template>
-  <ng-template #noTodos><p>Нет задач</p></ng-template>
+
+    <ng-template #loadingBlock><p>Loading...</p></ng-template>
+    <ng-template #noTodos><p>Нет задач</p></ng-template>
+  </ng-template>
 </div>
