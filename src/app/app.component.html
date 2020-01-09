@@ -5,7 +5,10 @@
     <div class="form-control">
       <label>Email</label>
       <input type="text" placeholder="Email" formControlName="email" />
-      <div class="validation" *ngIf="form.get('email').invalid && form.get('email').touched">
+      <div
+        class="validation"
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+      >
         <small *ngIf="form.get('email').errors.required">
           Поле email не может быть пустым
         </small>
@@ -18,33 +21,39 @@
     <div class="form-control">
       <label>Пароль</label>
       <input type="password" placeholder="Пароль" formControlName="password" />
-      <div class="validation" *ngIf="form.get('password').invalid && form.get('password').touched">
+      <div
+        class="validation"
+        *ngIf="form.get('password').invalid && form.get('password').touched"
+      >
         <small *ngIf="form.get('password').errors.required">
           Пароль не может быть пустым
         </small>
         <small *ngIf="form.get('password').errors.minlength">
           Минимальная длинна пароля
-          {{ form.get('password').errors.minlength.requiredLength }} символов Текущая длинна пароля
+          {{ form.get('password').errors.minlength.requiredLength }} символов
+          Текущая длинна пароля
           {{ form.get('password').errors.minlength.actualLength }}
         </small>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Адрес</h2>
 
       <div class="form-control">
         <label>Страна</label>
 
-        <select>
-          <option value="ru">Россия</option>
-          <option value="ua">Украина</option>
-          <option value="by">Беларусь</option>
-        </select>
+        <label>
+          <select formControlName="country">
+            <option value="ua">Украина</option>
+            <option value="by">Беларусь</option>
+            <option value="ru">Россия</option>
+          </select>
+        </label>
       </div>
 
       <div class="form-control">
-        <input type="text" />
+        <input type="text" formControlName="city" placeholder="Город" />
       </div>
 
       <button type="button" class="btn">Выбрать столицу</button>
@@ -59,6 +68,8 @@
       </div>
     </div>
 
-    <button type="submit" class="btn" [disabled]="form.invalid">Отправить</button>
+    <button type="submit" class="btn" [disabled]="form.invalid">
+      Отправить
+    </button>
   </form>
 </div>
