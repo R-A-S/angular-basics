@@ -11,17 +11,22 @@
 
   <hr />
   <div *ngIf="!isFetching; else loadingBlock">
-    <div class="card" *ngFor="let todo of todos">
-      <p>
-        <span [class.completed]="todo.completed">{{
-          todo.title | titlecase
-        }}</span>
-        <span>
-          <button class="btn btn-danger">Удалить</button>
-          <button class="btn" [disabled]="todo.completed">Завершить</button>
-        </span>
-      </p>
+    <div *ngIf="todos.length; else noTodos">
+      <div class="card" *ngFor="let todo of todos">
+        <p>
+          <span [class.completed]="todo.completed">{{
+            todo.title | titlecase
+          }}</span>
+          <span>
+            <button class="btn btn-danger" (click)="removeTodo(todo.id)">
+              Удалить
+            </button>
+            <button class="btn" [disabled]="todo.completed">Завершить</button>
+          </span>
+        </p>
+      </div>
     </div>
   </div>
-  <ng-template #loadingBlock>Loading...</ng-template>
+  <ng-template #loadingBlock><p>Loading...</p></ng-template>
+  <ng-template #noTodos><p>Нет задач</p></ng-template>
 </div>

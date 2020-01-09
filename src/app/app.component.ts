@@ -53,4 +53,11 @@ export class AppComponent implements OnInit {
         this.isFetching = false;
       });
   }
+
+  removeTodo(id: number): void {
+    this.http.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .subscribe(() => {
+        this.todos = this.todos.filter((t) => t.id !== id)
+      })
+  }
 }
