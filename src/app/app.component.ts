@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
       ]),
       address: new FormGroup({
         country: new FormControl('ua'),
-        city: new FormControl('', Validators.required),
+        city: new FormControl('Киев', Validators.required),
       }),
       skills: new FormArray([]),
     });
@@ -35,6 +35,8 @@ export class AppComponent implements OnInit {
       const formData = { ...this.form.value };
 
       console.log('Form data: ', formData);
+
+      this.form.reset();
     }
   }
 
