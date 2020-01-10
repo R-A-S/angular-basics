@@ -1,21 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Provider } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { AuthInterseptor } from './auth.interseptor';
-
-const INTERCEPTOR_PROVIDER: Provider = {
-  provide: HTTP_INTERCEPTORS,
-  useClass: AuthInterseptor,
-  multi: true,
-};
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './post/post.component';
+import { AboutExtraComponent } from './about-extra/about-extra.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
-  providers: [INTERCEPTOR_PROVIDER],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    HomeComponent,
+    PostsComponent,
+    PostComponent,
+    AboutExtraComponent,
+  ],
+  imports: [BrowserModule, FormsModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
