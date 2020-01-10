@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   constructor(private router: Router) {}
 
-  goToPostsPage() {
+  goToPostsPage(): void {
     this.router.navigate(['/posts']);
   }
 }
